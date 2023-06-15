@@ -1,0 +1,432 @@
+/**
+    Utilities
+    ==========================================================================
+    A collection of useful utility classes.
+
+    developed by @yasinldev
+*/
+
+$auto: auto !default;
+@import "./../base/_variables.scss";
+
+
+// Creating Font Size breakpoints
+$mai-font-size-breakpoints:(
+    fs-1: 0.75rem,
+    fs-2: 0.875rem,
+    fs-3: 1rem,
+    fs-4: 1.25rem,
+    fs-5: 1.5rem,
+    fs-6: 2rem,
+    fs-7: 3rem,
+    fs-8: 4rem,
+    fs-9: 6rem,
+);
+
+@each $key, $value in $mai-font-size-breakpoints{
+    .#{$key}{
+        font-size: $value;
+    }
+}
+
+$justify-content-breakpoints:(
+    justify-content-center: center,
+    justify-content-start: flex-start,
+    justify-content-end: flex-end,
+    justify-content-between: space-between,
+    justify-content-around: space-around,
+);
+
+@each $key, $value in $justify-content-breakpoints {
+    .#{$key}{
+        justify-content: $value;
+    }
+}
+
+$text-style-breakpoints: (
+    text-center: center,
+    text-start: start,
+    text-end: right,
+    text-end-rtl: left,
+);
+
+$text-color-breakpoint: (
+    text-primary: $primary-color,
+    text-secondary: $secondary-color,
+    text-success: $success-color,
+    text-info: $info-color,
+    text-warning: $warning-color,
+    text-error: $error-color,
+    text-light: $default-light-color,
+    text-dark: $default-dark-color,
+
+    text-primary-100: $primary-color-100,
+    text-primary-200: $primary-color-200,
+    text-primary-300: $primary-color-300,
+    text-primary-400: $primary-color-400,
+    text-primary-500: $primary-color-500,
+    text-primary-600: $primary-color-600,
+    text-primary-700: $primary-color-700,
+
+    text-secondary-100: $secondary-color-100,
+    text-secondary-200: $secondary-color-200,
+    text-secondary-300: $secondary-color-300,
+    text-secondary-400: $secondary-color-400,
+    text-secondary-500: $secondary-color-500,
+    text-secondary-600: $secondary-color-600,
+    text-secondary-700: $secondary-color-700,
+
+    text-success-100: $success-color-100,
+    text-success-200: $success-color-200,
+    text-success-300: $success-color-300,
+    text-success-400: $success-color-400,
+    text-success-500: $success-color-500,
+    text-success-600: $success-color-600,
+    text-success-700: $success-color-700,
+
+    text-info-100: $info-color-100,
+    text-info-200: $info-color-200,
+    text-info-300: $info-color-300,
+    text-info-400: $info-color-400,
+    text-info-500: $info-color-500,
+    text-info-600: $info-color-600,
+    text-info-700: $info-color-700,
+
+    text-warning-100: $warning-color-100,
+    text-warning-200: $warning-color-200,
+    text-warning-300: $warning-color-300,
+    text-warning-400: $warning-color-400,
+    text-warning-500: $warning-color-500,
+    text-warning-600: $warning-color-600,
+    text-warning-700: $warning-color-700,
+
+    text-error-100: $error-color-100,
+    text-error-200: $error-color-200,
+    text-error-300: $error-color-300,
+    text-error-400: $error-color-400,
+    text-error-500: $error-color-500,
+    text-error-600: $error-color-600,
+    text-error-700: $error-color-700,
+);
+
+$text-hover: (
+    text-hover-primary: $primary-color,
+    text-hover-secondary: $secondary-color,
+    text-hover-success: $success-color,
+    text-hover-info: $info-color,
+    text-hover-warning: $warning-color,
+    text-hover-error: $error-color,
+    text-hover-light: $default-light-color,
+    text-hover-dark: $default-dark-color,
+
+    text-hover-primary-100: $primary-color-100,
+    text-hover-primary-200: $primary-color-200,
+    text-hover-primary-300: $primary-color-300,
+    text-hover-primary-400: $primary-color-400,
+    text-hover-primary-500: $primary-color-500,
+    text-hover-primary-600: $primary-color-600,
+    text-hover-primary-700: $primary-color-700,
+
+    text-hover-secondary-100: $secondary-color-100,
+    text-hover-secondary-200: $secondary-color-200,
+    text-hover-secondary-300: $secondary-color-300,
+    text-hover-secondary-400: $secondary-color-400,
+    text-hover-secondary-500: $secondary-color-500,
+    text-hover-secondary-600: $secondary-color-600,
+    text-hover-secondary-700: $secondary-color-700,
+
+    text-hover-success-100: $success-color-100,
+    text-hover-success-200: $success-color-200,
+    text-hover-success-300: $success-color-300,
+    text-hover-success-400: $success-color-400,
+    text-hover-success-500: $success-color-500,
+    text-hover-success-600: $success-color-600,
+    text-hover-success-700: $success-color-700,
+
+    text-hover-info-100: $info-color-100,
+    text-hover-info-200: $info-color-200,
+    text-hover-info-300: $info-color-300,
+    text-hover-info-400: $info-color-400,
+    text-hover-info-500: $info-color-500,
+    text-hover-info-600: $info-color-600,
+    text-hover-info-700: $info-color-700,
+
+    text-hover-warning-100: $warning-color-100,
+    text-hover-warning-200: $warning-color-200,
+    text-hover-warning-300: $warning-color-300,
+    text-hover-warning-400: $warning-color-400,
+    text-hover-warning-500: $warning-color-500,
+    text-hover-warning-600: $warning-color-600,
+    text-hover-warning-700: $warning-color-700,
+
+    text-hover-error-100: $error-color-100,
+    text-hover-error-200: $error-color-200,
+    text-hover-error-300: $error-color-300,
+    text-hover-error-400: $error-color-400,
+    text-hover-error-500: $error-color-500,
+    text-hover-error-600: $error-color-600,
+    text-hover-error-700: $error-color-700,
+);
+
+$text-active: (
+    text-active-primary: $primary-color,
+    text-active-secondary: $secondary-color,
+    text-active-success: $success-color,
+    text-active-info: $info-color,
+    text-active-warning: $warning-color,
+    text-active-error: $error-color,
+    text-active-light: $default-light-color,
+    text-active-dark: $default-dark-color,
+
+    text-active-primary-100: $primary-color-100,
+    text-active-primary-200: $primary-color-200,
+    text-active-primary-300: $primary-color-300,
+    text-active-primary-400: $primary-color-400,
+    text-active-primary-500: $primary-color-500,
+    text-active-primary-600: $primary-color-600,
+    text-active-primary-700: $primary-color-700,
+
+    text-active-secondary-100: $secondary-color-100,
+    text-active-secondary-200: $secondary-color-200,
+    text-active-secondary-300: $secondary-color-300,
+    text-active-secondary-400: $secondary-color-400,
+    text-active-secondary-500: $secondary-color-500,
+    text-active-secondary-600: $secondary-color-600,
+    text-active-secondary-700: $secondary-color-700,
+
+    text-active-success-100: $success-color-100,
+    text-active-success-200: $success-color-200,
+    text-active-success-300: $success-color-300,
+    text-active-success-400: $success-color-400,
+    text-active-success-500: $success-color-500,
+    text-active-success-600: $success-color-600,
+    text-active-success-700: $success-color-700,
+
+    text-active-info-100: $info-color-100,
+    text-active-info-200: $info-color-200,
+    text-active-info-300: $info-color-300,
+    text-active-info-400: $info-color-400,
+    text-active-info-500: $info-color-500,
+    text-active-info-600: $info-color-600,
+    text-active-info-700: $info-color-700,
+
+    text-active-warning-100: $warning-color-100,
+    text-active-warning-200: $warning-color-200,
+    text-active-warning-300: $warning-color-300,
+    text-active-warning-400: $warning-color-400,
+    text-active-warning-500: $warning-color-500,
+    text-active-warning-600: $warning-color-600,
+    text-active-warning-700: $warning-color-700,
+
+    text-active-error-100: $error-color-100,
+    text-active-error-200: $error-color-200,
+    text-active-error-300: $error-color-300,
+    text-active-error-400: $error-color-400,
+    text-active-error-500: $error-color-500,
+    text-active-error-600: $error-color-600,
+    text-active-error-700: $error-color-700,
+);
+
+@each $key, $value in $text-active {
+    .#{$key} {
+        &:active {
+            color: $value;
+        }
+    }
+}
+
+$text-style: (
+    text-style-italic: italic,
+    text-style-normal: normal,
+    text-style-oblique: oblique,
+    text-style-initial: initial,
+    text-style-inherit: inherit,
+);
+
+@each $key, $value in $text-style {
+    .#{$key} {
+        font-style: $value;
+    }
+}
+
+@each $key, $value in $text-hover {
+    .#{$key} {
+        &:hover {
+            color: $value;
+        }
+    }
+}
+
+@each $key, $value in $text-style-breakpoints {
+    .#{$key} {
+        text-align: $value;
+    }
+}
+
+@each $key, $value in $text-color-breakpoint {
+    .#{$key} {
+        color: $value;
+    }
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.text-container{
+    white-space: nowrap !important;
+    overflow-x: auto !important;
+}
+
+.align-items-end{
+    align-items: flex-end;
+}
+
+.align-items-start{
+    align-items: flex-start;
+}
+
+.align-items-stretch{
+    align-items: stretch;
+}
+
+.align-items-baseline{
+    align-items: baseline;
+}
+
+.justify-content-between{
+    justify-content: space-between;
+}
+
+
+$float-breakpoints: (
+    float-start: left,
+    float-end: right,
+    float-none: none,
+);
+
+@each $key, $value in $float-breakpoints {
+    .#{$key} {
+        float: $value !important;
+    }
+}
+
+$position-breakpoints: (
+    position-static: static,
+    position-relative: relative,
+    position-absolute: absolute,
+    position-fixed: fixed,
+    position-sticky: sticky,
+);
+
+@each $key, $value in $position-breakpoints {
+    .#{$key} {
+        position: $value !important;
+    }
+}
+
+
+$font-weight-breakpoints: (
+    fw-light: 300,
+    fw-normal: 400,
+    fw-bold: 700,
+);
+
+@each $key, $value in $font-weight-breakpoints {
+    .#{$key} {
+        font-weight: $value !important;
+    }
+}
+
+$box-sizing: (
+    box-border: border-box,
+    box-content: content-box,
+);
+
+@each $key, $value in $box-sizing {
+    .#{$key} {
+        box-sizing: $value !important;
+    }
+}
+
+
+$clear: (
+    clear-left: left,
+    clear-right: right,
+    clear-both: both,
+    clear-none: none,
+);
+
+@each $key, $value in $clear {
+    .#{$key} {
+        clear: $value !important;
+    }
+}
+
+$isolation: (
+    isolation-auto: auto,
+    isolation-isolate: isolate,
+);
+
+@each $key, $value in $isolation {
+    .#{$key} {
+        isolation: $value !important;
+    }
+}
+
+$object-fit: (
+    object-contain: contain,
+    object-cover: cover,
+    object-fill: fill,
+    object-none: none,
+    object-scale-down: scale-down,
+);
+
+@each $key, $value in $object-fit {
+    .#{$key} {
+        object-fit: $value !important;
+    }
+}
+
+$object-position: (
+    object-top: top,
+    object-bottom: bottom,
+    object-left: left,
+    object-right: right,
+    object-center: center,
+);
+
+@each $key, $value in $object-position {
+    .#{$key} {
+        object-position: $value !important;
+    }
+}
+
+$visibility: (
+    visible: visible,
+    invisible: hidden,
+);
+
+@each $key, $value in $visibility {
+    .#{$key} {
+        visibility: $value !important;
+    }
+}
+
+$z-index: (
+    z-0: 0,
+    z-1: 10,
+    z-2: 20,
+    z-3: 30,
+    z-4: 40,
+    z-5: 50,
+    z-auto: auto,
+);
+
+@each $key, $value in $z-index {
+    .#{$key} {
+        z-index: $value !important;
+    }
+}
+
+

@@ -1,0 +1,179 @@
+/*
+  Mixins
+  ==========================================================================
+  - Main Colors
+  - Text Colors
+  - Background Colors
+  - Border Colors
+  - Link Colors
+  - Button Colors
+  - Form Colors
+  - Font Family's
+  - Text Styles
+  - Text Sizes and Paddings
+  - Links
+  - List Styles
+
+  DEFINENING
+
+  developed by @yasinldev
+*/
+
+// Main Colors
+$primary-color: #007BFF;
+$secondary-color: #6C757D;
+$success-color: #28A745;
+$info-color:  #17A2B8;
+$warning-color: #FFC107;
+$error-color: #DC3545;
+$default-light-color: #F8F9FA;
+$default-dark-color: #343A40;
+
+// alternative colors
+$tomato-color: #FF6347;
+$orange-color: #FF7F50;
+$hotpink-color: #FF69B4;
+$coral-color: #FF7F50;
+$darkorange-color: #FF8C00;
+$lightsalmon-color: #FFA07A;
+$lightpink-color: #FFB6C1;
+$peachpuff-color: #FFDAB9;
+$navajowhite-color: #FFDEAD;
+$khaki-color: #F0E68C;
+$gold-color: #FFD700;
+$yellow-color: #FFFF00;
+$lightyellow-color: #FFFFE0;
+$lemonchiffon-color: #FFFACD;
+$lightgoldenrodyellow-color: #FAFAD2;
+$papayawhip-color: #FFEFD5;
+$moccasin-color: #FFE4B5;
+
+$primary-color-100: #cce5ff;
+$primary-color-200: #99ccff;
+$primary-color-300: #66b2ff;
+$primary-color-400: #3399ff;
+$primary-color-500: #007bff;
+$primary-color-600: #0066cc;
+$primary-color-700: #004c99;
+
+$secondary-color-100: #e6ecf0;
+$secondary-color-200: #ccd9e5;
+$secondary-color-300: #b3c6db;
+$secondary-color-400: #99b3d0;
+$secondary-color-500: #809fc6;
+$secondary-color-600: #668cbf;
+$secondary-color-700: #4d79b8;
+
+$success-color-100: #d1e7dd;
+$success-color-200: #a3cfbb;
+$success-color-300: #75b798;
+$success-color-400: #47a775;
+$success-color-500: #28a745;
+$success-color-600: #1f8a5e;
+$success-color-700: #176d47;
+
+$info-color-100: #d0ecf5;
+$info-color-200: #a1d9eb;
+$info-color-300: #73c6e1;
+$info-color-400: #44b3d7;
+$info-color-500: #17a2b8;
+$info-color-600: #128a95;
+$info-color-700: #0d6d71;
+
+$warning-color-100: #fff3cd;
+$warning-color-200: #ffe6b3;
+$warning-color-300: #ffda99;
+$warning-color-400: #ffcc7f;
+$warning-color-500: #ffc107;
+$warning-color-600: #e6a100;
+$warning-color-700: #b38600;
+
+$error-color-100: #f8d7da;
+$error-color-200: #f1afbb;
+$error-color-300: #ea879c;
+$error-color-400: #e3607d;
+$error-color-500: #dc3545;
+$error-color-600: #b02a37;
+$error-color-700: #842029;
+
+    // Text Colors
+$heading-color: #333;
+$text-color-base: #333;
+$text-color-secondary: #999;
+$disabled-color: #ccc;
+$hr-color: #e8e8e8;
+
+// Background Colors
+$body-background-color: #fff;
+$component-background-color:#f0f0f0;
+$disabled-background-color: #a1a0a0;
+
+// Border Colors
+$border-color-base: #dedede;
+$border-color-split: #e8e8e8;
+
+// Link Colors
+$link-color: $primary-color;
+$link-hover-color: darken($link-color, 60%);
+
+// Form Colors
+$input-border-color: $border-color-base;
+$input-hover-border-color: $primary-color;
+$input-focus-border-color: $primary-color;
+$input-disabled-bg: $disabled-background-color;
+$input-disabled-color: $text-color-secondary;
+$label-color: $heading-color;
+$select-border-color: $border-color-base;
+
+
+// defining Font Family's
+// -_-_-_-_-_-_-_-_-_-_-_--->
+
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+$font-family-heading: "Montserrat", sans-serif;
+$font-family-base: "Open Sans", sans-serif;
+$font-family-mono: "Roboto Mono", monospace;
+
+
+// defining Text Styles
+// -_-_-_-_-_-_-_-_-_-_-_--->
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+
+
+// defining Text Sizes and Paddings
+// -_-_-_-_-_-_-_-_-_-_-_--->
+
+$font-size-base: 14px;
+$font-size-lg: $font-size-base + 2px;
+$font-size-sm: $font-size-base - 2px;
+
+$line-height-base: 1.5;
+$line-height-computed: $font-size-base * $line-height-base;
+
+$padding-lg: 24px;
+$padding-md: 16px;
+$padding-sm: 12px;
+$padding-xs: 8px;
+
+$margin-lg: 24px;
+$margin-md: 16px;
+$margin-sm: 12px;
+$margin-xs: 8px;
+
+// Links
+// -_-_-_-_-_-_-_-_-_-_-_--->
+
+$link-decoration: none;
+$link-hover-decoration: pointer;
+
+// defining list styles
+// -_-_-_-_-_-_-_-_-_-_-_--->
+
+$list-style: none;
+$list-style-position: inside;
+$list-style-type: disc;
